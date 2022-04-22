@@ -14,6 +14,7 @@
 		ADB6895C2326708E006D4E2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADB6895B2326708E006D4E2B /* Assets.xcassets */; };
 		ADB6895F2326708E006D4E2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADB6895D2326708E006D4E2B /* LaunchScreen.storyboard */; };
 		CFF1FD5C28132F1F0040D6EB /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF1FD5B28132F1F0040D6EB /* ResultsViewController.swift */; };
+		CFF1FD6328134B0B0040D6EB /* TipsyBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF1FD6228134B0B0040D6EB /* TipsyBrain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		ADB6895E2326708E006D4E2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ADB689602326708E006D4E2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFF1FD5B28132F1F0040D6EB /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		CFF1FD6228134B0B0040D6EB /* TipsyBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsyBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +62,9 @@
 			children = (
 				ADB689522326708D006D4E2B /* AppDelegate.swift */,
 				ADB689542326708D006D4E2B /* SceneDelegate.swift */,
+				CFF1FD60281349E50040D6EB /* Model */,
 				CFF1FD5D28132F260040D6EB /* Controllers */,
-				ADB689582326708D006D4E2B /* Main.storyboard */,
+				CFF1FD61281349EE0040D6EB /* View */,
 				ADB6895B2326708E006D4E2B /* Assets.xcassets */,
 				ADB6895D2326708E006D4E2B /* LaunchScreen.storyboard */,
 				ADB689602326708E006D4E2B /* Info.plist */,
@@ -76,6 +79,22 @@
 				CFF1FD5B28132F1F0040D6EB /* ResultsViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CFF1FD60281349E50040D6EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CFF1FD6228134B0B0040D6EB /* TipsyBrain.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CFF1FD61281349EE0040D6EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ADB689582326708D006D4E2B /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +171,7 @@
 				ADB689572326708D006D4E2B /* CalculatorViewController.swift in Sources */,
 				ADB689532326708D006D4E2B /* AppDelegate.swift in Sources */,
 				ADB689552326708D006D4E2B /* SceneDelegate.swift in Sources */,
+				CFF1FD6328134B0B0040D6EB /* TipsyBrain.swift in Sources */,
 				CFF1FD5C28132F1F0040D6EB /* ResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

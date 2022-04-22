@@ -10,9 +10,7 @@ import UIKit
 
 class CalculatorViewController: UIViewController {
     
-    var tip = 0.0
-    var numberOfPeople = 2
-    var billTotal = 0.0
+    var tipsyBrain = TipsyBrain()
     
     @IBOutlet weak var billTextField: UITextField!
     @IBOutlet weak var zeroPctButton: UIButton!
@@ -26,27 +24,29 @@ class CalculatorViewController: UIViewController {
         twentyPctButton.isSelected = false
         sender.isSelected = true
         
-        let buttonTitle = sender.currentTitle!
-        let buttonTitleMinusPercentSign = String(buttonTitle.dropLast())
-        let buttonTitleAsANumber = Double(buttonTitleMinusPercentSign)!
-        tip = buttonTitleAsANumber / 100
-        
+        tipsyBrain.tipPercentage = sender.currentTitle!
+        tipsyBrain.formatStringToDouble()
     }
     
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
         splitNumberLabel.text = String(format: "%.0f", sender.value)
-        numberOfPeople = Int(sender.value)
+        tipsyBrain.numberOfPeople = Int(sender.value)
     }
     
     @IBAction func calculatePressed(_ sender: UIButton) {
-        let bill = billTextField.text!
+        tipsyBrain.calculateTip(bill: billTextField.text!)
         
-        if bill != "" {
-            billTotal = Double(bill)!
-            let billSplit = String(format: "%.2f", billTotal * (1 + tip)  / Double(numberOfPeople))
-            print(billSplit)
+        self.performSegue(withIdentifier: "goToResult", sender: self)
+    }
+        
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToResult" {
+            let resultVC = segue.destination as! ResultsViewController
+            resultVC.result = tipsyBrain.billTotal
+            resultVC.numberPeople = tipsyBrain.numberOfPeople
+            resultVC.tipPercentage = tipsyBrain.tipPercentage
         }
     }
-    
 }
+
 
